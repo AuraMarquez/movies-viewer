@@ -1,3 +1,51 @@
-<p class="text-white">movie-details works!</p>
+<div class="py-3 text-white">
+  <h1 class="text-2xl font-semibold">Movie Details</h1>
 
-<app-toogle></app-toogle>
+  <div class="pt-4 sm:flex">
+    <div
+      class="mx-auto w-full max-w-xs flex-shrink-0 sm:w-1/3 sm:max-w-none md:w-1/4"
+    >
+      <div class="poster-ratio relative w-full overflow-hidden rounded-xl">
+        <img
+          class="absolute inset-0 h-full w-full"
+          src="{{ '/assets/posters/' + movie.poster }}"
+          alt="{{ movie.title }}"
+        />
+      </div>
+    </div>
+
+    <div class="flex flex-grow flex-col pt-3 sm:pl-4 sm:pt-0">
+      <span> Title: {{ movie.title }} </span>
+      <span> Description: {{ movie.description }} </span>
+      <span> Rating: {{ movie.rating }} </span>
+      <span> Duration: {{ movie.duration }} </span>
+      <span> Genre: {{ movie.genre }} </span>
+      <span> Release date: {{ movie.releaseDate }} </span>
+
+      <app-toogle
+        class="pt-2"
+        [data]="{
+          label: 'Add to wishlist',
+          checked: !!movie.onWatchlist
+        }"
+        (clicked)="toogleClicked()"
+      ></app-toogle>
+    </div>
+  </div>
+
+  <div class="pt-3">
+    <h2 class="text-xl font-semibold">Movie Trailer</h2>
+
+    <div class="flex justify-center px-4 pt-2">
+      <div class="w-full max-w-4xl">
+        <div class="video-ratio relative">
+          <iframe
+            class="absolute inset-0 h-full w-full"
+            [src]="trailerUrl"
+            frameborder="0"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
