@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.poster-ratio {
+  padding-top: 149%
+}

@@ -1,1 +1,36 @@
-<p class="text-white">movie-thumbnail works!</p>
+<div class="poster-ratio relative w-full overflow-hidden rounded-xl">
+  <img
+    class="absolute inset-0 h-full w-full"
+    src="{{ '/assets/posters/' + movie.poster }}"
+    alt="{{ movie.title }}"
+  />
+
+  <div
+    class="absolute inset-0 flex cursor-pointer flex-col items-center justify-center bg-black bg-opacity-70 p-2 text-center text-white opacity-0 hover:opacity-100 hover:transition-opacity"
+    (click)="goToMovieDetails()"
+  >
+    <span class="text-lg font-semibold leading-tight">
+      {{ movie.title }}
+    </span>
+
+    <span class="mt-4 text-xs"> Rating: {{ movie.rating }} </span>
+
+    <span class="mt-1 text-xs"> Duration: {{ movie.duration }} </span>
+
+    <span class="mt-1 text-xs"> Genres: {{ movie.genre }} </span>
+
+    <div class="mt-6" *ngIf="movie.onWatchlist; else addButton">
+      <span class="text-sm">On my watchlist</span>
+    </div>
+
+    <ng-template #addButton>
+      <button
+        type="button"
+        class="mt-6 rounded bg-teal-600 px-3 py-1 text-sm"
+        (click)="addToWatchlist($event)"
+      >
+        Add to watchlist
+      </button>
+    </ng-template>
+  </div>
+</div>
