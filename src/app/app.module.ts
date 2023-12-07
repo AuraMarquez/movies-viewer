@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { MovieListComponent } from './pages/movie-list/movie-list.component';
 import { MovieDetailsComponent } from './pages/movie-details/movie-details.component';
 import { MovieThumbnailComponent } from './shared/components/movie-thumbnail/movie-thumbnail.component';
+import { ToogleComponent } from './shared/components/toogle/toogle.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { MovieThumbnailComponent } from './shared/components/movie-thumbnail/mov
     MovieListComponent,
     MovieDetailsComponent,
     MovieThumbnailComponent,
+    ToogleComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
