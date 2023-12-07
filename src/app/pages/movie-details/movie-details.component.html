@@ -14,13 +14,31 @@
       </div>
     </div>
 
-    <div class="flex flex-grow flex-col pt-3 sm:pl-4 sm:pt-0">
-      <span> Title: {{ movie.title }} </span>
-      <span> Description: {{ movie.description }} </span>
-      <span> Rating: {{ movie.rating }} </span>
-      <span> Duration: {{ movie.duration }} </span>
-      <span> Genre: {{ movie.genre }} </span>
-      <span> Release date: {{ movie.releaseDate }} </span>
+    <div class="flex flex-grow flex-col gap-y-2 pt-3 sm:pl-4 sm:pt-0">
+      <p>
+        <span class="tracking-widest text-gray-400">Title: </span>
+        {{ movie.title }}
+      </p>
+      <p>
+        <span class="tracking-widest text-gray-400">Description: </span>
+        {{ movie.description }}
+      </p>
+      <p>
+        <span class="tracking-widest text-gray-400">Rating: </span>
+        {{ movie.rating }}
+      </p>
+      <p>
+        <span class="tracking-widest text-gray-400">Duration: </span>
+        {{ movie.duration }}
+      </p>
+      <p>
+        <span class="tracking-widest text-gray-400">Genre: </span
+        >{{ movie.genre }}
+      </p>
+      <p>
+        <span class="tracking-widest text-gray-400">Release date: </span
+        >{{ movie.releaseDate }}
+      </p>
 
       <app-toogle
         class="pt-2"
